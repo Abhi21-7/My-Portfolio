@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 
 // Allow only your frontend domain and localhost for dev
 const allowedOrigins = [
-  "https://my-portfolio-abhi21-7s-projects.vercel.app", // your deployed frontend
+  "https://my-portfolio-flame-mu-23.vercel.app/", // your deployed frontend
   "http://localhost:3000"
 ];
 
