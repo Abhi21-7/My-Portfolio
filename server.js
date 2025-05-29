@@ -9,7 +9,16 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+// Allow only your frontend domain and localhost for dev
+const allowedOrigins = [
+  "https://my-portfolio-4qgo2gp86-abhi21-7s-projects.vercel.app", // your deployed frontend
+  "http://localhost:3000"
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+}));
 app.use(express.json());
 
 // static files
