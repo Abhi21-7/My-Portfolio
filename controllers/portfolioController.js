@@ -16,24 +16,21 @@ const transporter = nodemailer.createTransport({
 
 const sendEmailController = async (req, res) => {
   try {
-    const { Name, Email, Tel, Subject, Msg } = req.body;
+    const { Name, Email, Msg } = req.body;
 
-    if (!Name || !Email || !Tel || !Subject || !Msg) {
+    if (!Name || !Email || !Msg) {
       return res.status(400).json({ success: false, message: 'All fields are required' });
     }
 
     const mail = {
       from: Email,
       to: process.env.SMTP_TO_EMAIL,
-      subject: Subject,
       text: Msg,
       html: `
         <h1>Portfolio Contact</h1>
         <ul>
           <li><strong>Name:</strong> ${Name}</li>
           <li><strong>Email:</strong> ${Email}</li>
-          <li><strong>Phone:</strong> ${Tel}</li>
-          <li><strong>Subject:</strong> ${Subject}</li>
           <li><strong>Message:</strong> ${Msg}</li>
         </ul>
       `,

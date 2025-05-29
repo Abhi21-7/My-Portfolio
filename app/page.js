@@ -12,31 +12,27 @@ export default function Home() {
 
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
-  const [Tel, setTel] = useState("");
-  const [Subject, setSubject] = useState("");
   const [Msg, setMsg] = useState("");
 
   // handle submit button
 const handleSubmit = async (e) => {
   e.preventDefault();
-  console.log("Submitting form:", { Name, Email, Tel, Subject, Msg });
+  console.log("Submitting form:", { Name, Email, Msg });
 
   try {
-    if (!Name || !Email || !Tel || !Subject || !Msg) {
+    if (!Name || !Email || !Msg) {
       toast.error("All fields are required");
       return;
     }
     const res = await axios.post(
       `${process.env.NEXT_PUBLIC_API_URL}/api/v1/portfolio/sendEmail`,
-      { Name, Email, Tel, Subject, Msg }
+      { Name, Email, Msg }
     );
     console.log("Response from server:", res.data);
     if (res.data.success) {
       toast.success("Email sent successfully!");
       setName("");
       setEmail("");
-      setTel("");
-      setSubject("");
       setMsg("");
     } else {
       toast.error("Failed to send email. Please try again.");
@@ -58,7 +54,7 @@ const handleSubmit = async (e) => {
     className="flex flex-col md:flex-row h-[100vh] w-full background-first py-24 px-5 md:pl-45"
   >
     {/* Left side */}
-    <div className="flex flex-col px-5 mt-20 md:mt-51 w-full md:w-1/2">
+    <div className="flex flex-col px-5 mt-10 md:mt-51 w-full md:w-1/2">
       <h3 className="text-4xl md:text-5xl font-bold mb-4">Hello, It&apos;s Me</h3>
       <h1 className="text-5xl md:text-6xl font-extrabold mb-4">Abhishek Agnihotri</h1>
       <div className="text-3xl md:text-4xl flex mr-4 font-bold mb-8">
@@ -163,7 +159,7 @@ const handleSubmit = async (e) => {
     className="flex flex-col md:flex-row background-second h-[100vh] py-24 md:px-40 px-5"
   >
     {/* Left side */}
-    <div className="flex flex-col mt-5  md:mt-33 w-full md:w-1/2">
+    <div className="flex flex-col mt-2  md:mt-33 w-full md:w-1/2">
       <Image
         src="/about.png"
         alt="Profile Picture"
@@ -173,7 +169,7 @@ const handleSubmit = async (e) => {
     </div>
 
     {/* Right side */}
-    <div className="flex flex-col mt-5 md:mt-43 w-full md:w-1/2">
+    <div className="flex flex-col mt-3 md:mt-43 w-full md:w-1/2">
       <div
         className="overflow-y-auto scrollable-content transition-all duration-300 bg-opacity-80 rounded-lg p-2"
         style={{
@@ -197,15 +193,15 @@ const handleSubmit = async (e) => {
         <p className="text-2xl mx-11 mb-2">
           I work across the full stack, with strong command of:
         </p>
-        <div className="text-2xl mx-11 mb-2 flex items-center">
+        <div className="text-2xl mx-11 mb-2 ">
           <span className="font-bold mr-2">● Frontend:</span> HTML, CSS,
           JavaScript, React.js, Next.js, Tailwind CSS
         </div>
-        <div className="text-2xl mx-11 mb-2 flex items-center">
+        <div className="text-2xl mx-11 mb-2 flex ">
           <span className="font-bold mr-2">● Backend:</span> Node.js,
           Express.js
         </div>
-        <div className="text-2xl mx-11 mb-8 flex items-center">
+        <div className="text-2xl mx-11 mb-8 flex">
           <span className="font-bold mr-2">● Database:</span> MongoDB
         </div>
 
@@ -371,30 +367,16 @@ const handleSubmit = async (e) => {
         <input
           type="text"
           placeholder="Name"
-          className="background-first w-full h-18 px-5 text-xl p-2 border-2 border-gray-600 rounded"
+          className="background-first w-[250px] h-18 px-5 text-xl p-2 border-2 border-gray-600 rounded"
           value={Name}
           onChange={(e) => setName(e.target.value)}
         />
         <input
           type="email"
           placeholder="Email"
-          className="background-first p-2 w-full h-18 px-5 text-xl border-2 border-gray-600 rounded"
+          className="background-first p-2 w-[250px] h-18 px-5 text-xl border-2 border-gray-600 rounded"
           value={Email}
           onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="tel"
-          placeholder="Mobile Number"
-          className="background-first p-2 w-full px-5 h-18 text-xl border-2 border-gray-600 rounded"
-          value={Tel}
-          onChange={(e) => setTel(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Subject"
-          className="background-first p-2 w-full px-5 h-18 text-xl border-2 border-gray-600 rounded"
-          value={Subject}
-          onChange={(e) => setSubject(e.target.value)}
         />
         <textarea
           placeholder="Enter Message"
