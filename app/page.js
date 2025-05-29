@@ -24,9 +24,13 @@ const handleSubmit = async (e) => {
       toast.error("All fields are required");
       return;
     }
-    const res = await axios.post(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/v1/portfolio/sendEmail`,
-      { Name, Email, Msg }
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/v1/portfolio/sendEmail`,
+        {
+          Name,
+          Email,
+          Msg,
+        }
     );
     console.log("Response from server:", res.data);
     if (res.data.success) {
