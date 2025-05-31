@@ -356,13 +356,13 @@ export default function Home() {
             I would love to hear from you! Whether you have a question, want to
             collaborate, or just want to say hi, feel free to reach out.
           </p>
-          <p className="text-2xl mb-8">
+          <p className="text-2xl mb-2">
             You can contact me via email or connect with me on social media.
           </p>
         </div>
 <form
   onSubmit={handleSubmit}
-  className="flex flex-col items-center justify-center p-6 md:p-10 md:pt-30 mt-5 w-full md:w-1/2 rounded-lg "
+  className="flex flex-col items-center justify-center p-6 md:p-10 md:pt-30 md:mt-5 w-full md:w-1/2 rounded-lg "
 >
   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mb-6">
     <input
