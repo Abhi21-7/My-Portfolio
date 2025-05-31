@@ -14,14 +14,20 @@ const PORT = process.env.PORT ? Number(process.env.PORT) : 5000;
 
 // Define allowed origins for CORS
 const allowedOrigins = [
-  process.env.NEXT_PUBLIC_API_URL,
   "https://my-portfolio-five-henna-22.vercel.app",
   "http://localhost:3000"
 ];
 
-// Enable CORS with allowed origins and credentials support
 app.use(cors({
-  origin: allowedOrigins,
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps, curl, etc.)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
 }));
 
