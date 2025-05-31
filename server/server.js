@@ -45,7 +45,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(process.cwd(), 'out', 'index.html'));
 });
 
-// Start the server and listen on the specified port
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
+// // Start the server and listen on the specified port
+// app.listen(PORT, () => {
+//   console.log(`Server listening on port ${PORT}`);
+// });
