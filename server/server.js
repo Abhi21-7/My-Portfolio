@@ -14,7 +14,8 @@ const PORT = process.env.PORT ? Number(process.env.PORT) : 5000;
 
 // Define allowed origins for CORS
 const allowedOrigins = [
-  process.env.NEXT_PUBLIC_API_URL, // your deployed frontend (removed trailing slash)
+  process.env.NEXT_PUBLIC_API_URL,
+  "https://my-portfolio-five-henna-22.vercel.app",
   "http://localhost:3000"
 ];
 
