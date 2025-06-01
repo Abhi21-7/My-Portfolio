@@ -52,175 +52,173 @@ export default function Home() {
   return (
     <main className="flex flex-col ">
       {/* Home page design */}
-      <section
-        id="home"
-        className="flex flex-col md:flex-row h-[100vh] w-full background-first py-24 px-5 md:pl-45"
-      >
-        {/* Left side */}
-        <div className="flex flex-col px-5 mt-10 md:mt-51 w-full md:w-1/2">
-          <h3 className="text-4xl md:text-5xl font-bold mb-4">
-            Hello, It&apos;s Me
-          </h3>
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
-            Abhishek Agnihotri
-          </h1>
-          <div className="text-3xl md:text-4xl flex mr-4 font-bold mb-8">
-            And I am a{" "}
-            <span className="green px-2">
-              <Typewriter
-                onInit={(typewriter) => {
-                  const loopTitles = () => {
-                    typewriter
-                      .typeString(" Full Stack Developer!")
-                      .pauseFor(2000)
-                      .deleteAll()
-                      .typeString(" MERN Stack Developer!")
-                      .pauseFor(2000)
-                      .deleteAll()
-                      .typeString(" Web Developer!")
-                      .pauseFor(2000)
-                      .deleteAll()
-                      .callFunction(loopTitles); // Recursively call to loop forever
-                  };
-                  loopTitles();
-                  typewriter.start();
-                }}
-                options={{
-                  loop: true,
-                  delay: 300,
-                  deleteSpeed: 400,
-                }}
-              />
-            </span>
-          </div>
-          <p className="text-2xl mb-8">
-            I&apos;m a web developer specializing in building responsive,
-            user-friendly websites and web applications. Explore my work and
-            let’s connect.
-          </p>
-          <div className="flex mt-2 gap-4">
-            {/* Social Icons */}
-            <a href="https://github.com/Abhi21-7">
-              <lord-icon
-                className="rounded-full transition-shadow duration-100 hover:shadow-lg glow-hover"
-                src={`https://cdn.lordicon.com/jjxzcivr.json`}
-                trigger="hover"
-                colors="primary:#08a88a,secondary:#08a88a"
-                style={{ width: "50px", height: "50px" }}
-              ></lord-icon>
-            </a>
-            <a href="https://www.linkedin.com/in/abhishek-agnihotri-b5a9492b8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
-              <lord-icon
-                className="rounded-full transition-shadow duration-100 hover:shadow-lg glow-hover"
-                src={`https://cdn.lordicon.com/euybrknk.json`}
-                trigger="hover"
-                colors="primary:#08a88a,secondary:#08a88a"
-                style={{ width: "50px", height: "50px" }}
-              ></lord-icon>
-            </a>
-            <a href="https://x.com/Abhi21_7?t=EkITWKEtgTztgxqR1dBAqQ&s=09">
-              <lord-icon
-                className="rounded-full transition-shadow duration-100 hover:shadow-lg glow-hover"
-                src={`https://cdn.lordicon.com/phdtlffx.json`}
-                trigger="hover"
-                colors="primary:#08a88a,secondary:#08a88a"
-                style={{ width: "50px", height: "50px" }}
-              ></lord-icon>
-            </a>
-            <a href="https://www.instagram.com/abhi21.7?utm_source=qr&igsh=ODdwN2djbXllODQ2">
-              <lord-icon
-                className="rounded-full transition-shadow duration-100 hover:shadow-lg glow-hover"
-                src={`https://cdn.lordicon.com/cuwcpyqc.json`}
-                trigger="hover"
-                colors="primary:#08a88a,secondary:#08a88a"
-                style={{ width: "50px", height: "50px" }}
-              ></lord-icon>
-            </a>
-          </div>
-          <a href="/MyResume.pdf" download>
-            <button
-              type="download"
-              onClick={() => toast.success("CV Downloaded Successfully!")}
-              className="text-white bg-gradient-to-br mt-7 font-bold text-2xl h-15 w-[227px] from-green-400 to-blue-400 hover:bg-gradient-to-bl rounded-full px-5 py-2.5 text-center me-2 mb-2 transition-shadow duration-100 hover:shadow-lg glow-hover"
-            >
-              Download CV
-            </button>
-          </a>
-        </div>
+<section
+  id="home"
+  className="flex flex-col md:flex-row items-center h-auto min-h-screen w-full background-first py-16 md:py-24 px-4 md:px-40"
+>
+  {/* Left side */}
+  <div className="flex flex-col justify-center w-full md:w-[65%] px-2 md:px-8 mb-10 md:mb-0">
+    <h3 className="text-3xl md:text-5xl font-bold mb-3">
+      Hello, It&apos;s Me
+    </h3>
+    <h1 className="text-4xl md:text-6xl font-extrabold mb-3">
+      Abhishek Agnihotri
+    </h1>
+    <div className="text-2xl md:text-4xl flex font-bold mb-6">
+      And I am a{" "}
+      <span className="green px-2">
+        <Typewriter
+          onInit={(typewriter) => {
+            const loopTitles = () => {
+              typewriter
+                .typeString(" Full Stack Developer!")
+                .pauseFor(2000)
+                .deleteAll()
+                .typeString(" MERN Stack Developer!")
+                .pauseFor(2000)
+                .deleteAll()
+                .typeString(" Web Developer!")
+                .pauseFor(2000)
+                .deleteAll()
+                .callFunction(loopTitles);
+            };
+            loopTitles();
+            typewriter.start();
+          }}
+          options={{
+            loop: true,
+            delay: 300,
+            deleteSpeed: 400,
+          }}
+        />
+      </span>
+    </div>
+    <p className="text-lg md:text-2xl mb-6">
+      I&apos;m a web developer specializing in building responsive,
+      user-friendly websites and web applications. Explore my work and
+      let’s connect.
+    </p>
+    <div className="flex flex-wrap gap-4 mb-6">
+      {/* Social Icons */}
+      <a href="https://github.com/Abhi21-7" aria-label="GitHub">
+        <lord-icon
+          className="rounded-full transition-shadow duration-100 hover:shadow-lg glow-hover"
+          src="https://cdn.lordicon.com/jjxzcivr.json"
+          trigger="hover"
+          colors="primary:#08a88a,secondary:#08a88a"
+          style={{ width: "50px", height: "50px" }}
+        ></lord-icon>
+      </a>
+      <a href="https://www.linkedin.com/in/abhishek-agnihotri-b5a9492b8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" aria-label="LinkedIn">
+        <lord-icon
+          className="rounded-full transition-shadow duration-100 hover:shadow-lg glow-hover"
+          src="https://cdn.lordicon.com/euybrknk.json"
+          trigger="hover"
+          colors="primary:#08a88a,secondary:#08a88a"
+          style={{ width: "50px", height: "50px" }}
+        ></lord-icon>
+      </a>
+      <a href="https://x.com/Abhi21_7?t=EkITWKEtgTztgxqR1dBAqQ&s=09" aria-label="Twitter">
+        <lord-icon
+          className="rounded-full transition-shadow duration-100 hover:shadow-lg glow-hover"
+          src="https://cdn.lordicon.com/phdtlffx.json"
+          trigger="hover"
+          colors="primary:#08a88a,secondary:#08a88a"
+          style={{ width: "50px", height: "50px" }}
+        ></lord-icon>
+      </a>
+      <a href="https://www.instagram.com/abhi21.7?utm_source=qr&igsh=ODdwN2djbXllODQ2" aria-label="Instagram">
+        <lord-icon
+          className="rounded-full transition-shadow duration-100 hover:shadow-lg glow-hover"
+          src="https://cdn.lordicon.com/cuwcpyqc.json"
+          trigger="hover"
+          colors="primary:#08a88a,secondary:#08a88a"
+          style={{ width: "50px", height: "50px" }}
+        ></lord-icon>
+      </a>
+    </div>
+    <a href="/Resume.pdf" download>
+      <button type="download" onClick={() => toast.success("CV Downloaded Successfully!")} className="text-white bg-gradient-to-br mt-7 font-bold text-2xl h-15 w-[227px] from-green-400 to-blue-400 hover:bg-gradient-to-bl rounded-full px-5 py-2.5 text-center me-2 mb-2 transition-shadow duration-100 hover:shadow-lg glow-hover" > Download CV </button>
 
-        {/* Right side */}
-        <div className="flex flex-col md:pl-40 mt-5 md:mt-22 w-full md:w-1/2">
-          <Image
-            src="/home.png"
-            alt="Profile Picture"
-            width={450}
-            height={450}
-          />
-        </div>
-      </section>
+    </a>
+  </div>
+
+  {/* Right side */}
+  <div className="flex justify-center w-full md:w-[35%]">
+    <Image
+      src="/home.png"
+      alt="Profile Picture"
+      width={350}
+      height={350}
+      className="object-contain max-w-full h-auto"
+      priority
+    />
+  </div>
+</section>
 
       {/* About page Design */}
 <section
   id="about"
-  className="flex flex-col md:flex-row h-[100vh] py-24 md:px-40 px-5"
+  className="flex flex-col md:flex-row items-center min-h-screen w-full py-7 md:py-24 px-4 md:px-30 "
 >
   {/* Left side */}
-  <div className="flex flex-col mt-2 md:mt-10 w-full md:w-1/2 items-center justify-center">
+  <div className="flex justify-center items-center w-full md:w-[40%] mb-8 md:mb-0">
     <Image
       src="/about.png"
       alt="Profile Picture"
       width={350}
       height={350}
-      className="object-contain"
+      className="object-contain rounded-xl "
+      priority
     />
   </div>
 
   {/* Right side */}
-  <div className="flex flex-col mt-6 md:mt-10 w-full md:w-1/2">
+  <div className="flex flex-col w-full md:w-[55%]">
     <div
-      className="overflow-y-auto scrollable-content transition-all duration-300 rounded-lg p-4  "
+      className="overflow-y-auto scrollable-content transition-all duration-300 rounded-lg p-4 md:p-8"
       style={{
-        maxHeight: "420px",
+        maxHeight: "480px",
         minHeight: "250px",
         scrollbarWidth: "thin",
         scrollbarColor: "rgb(0, 255, 200) transparent",
       }}
     >
-      <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
+      <h1 className="text-3xl md:text-6xl font-extrabold mb-4">
         About <span className="green">Me</span>
       </h1>
       <h4 className="text-2xl md:text-4xl font-bold mb-4">Full Stack Developer!</h4>
-      <p className="text-lg md:text-2xl mb-8">
+      <p className="text-xl md:text-2xl mb-6">
         I am a Full Stack Developer with a passion for creating dynamic and responsive web applications. I have experience in both front-end and back-end development, allowing me to build complete solutions from concept to deployment.
       </p>
-      <p className="text-lg md:text-2xl mb-2">💻 What I Do</p>
-      <p className="text-lg md:text-2xl mx-2 md:mx-11 mb-2">
+      <p className="text-xl md:text-2xl mb-2">💻 What I Do</p>
+      <p className="text-xl md:text-2xl mb-2">
         I work across the full stack, with strong command of:
       </p>
-      <div className="text-lg md:text-2xl mx-2 md:mx-11 mb-2">
+      <div className="text-xl md:text-2xl mb-2">
         <span className="font-bold mr-2">● Frontend:</span> HTML, CSS, JavaScript, React.js, Next.js, Tailwind CSS
       </div>
-      <div className="text-lg md:text-2xl mx-2 md:mx-11 mb-2 flex">
+      <div className="text-xl md:text-2xl mb-2">
         <span className="font-bold mr-2">● Backend:</span> Node.js, Express.js
       </div>
-      <div className="text-lg md:text-2xl mx-2 md:mx-11 mb-8 flex">
+      <div className="text-xl md:text-2xl mb-6">
         <span className="font-bold mr-2">● Database:</span> MongoDB
       </div>
 
       {showMore && (
         <>
-          <p className="text-lg md:text-2xl mb-8">
+          <p className="text-base md:text-xl mb-6">
             I enjoy crafting clean, functional code and turning ideas into interactive, real-world web applications. From designing sleek user interfaces to developing robust backend systems, I aim to build seamless digital experiences.
           </p>
-          <div className="mb-8">
-            <p className="text-lg md:text-2xl mb-2 font-bold">🚀 My Mission</p>
-            <p className="text-lg md:text-2xl">
+          <div className="mb-6">
+            <p className="text-base md:text-xl mb-2 font-bold">🚀 My Mission</p>
+            <p className="text-base md:text-xl">
               To continuously learn, grow, and contribute to impactful projects while staying up to date with the latest technologies and trends in web development. I believe in writing clean, maintainable code and creating websites that are not only visually appealing but also optimized for performance and accessibility.
             </p>
           </div>
-          <div className="mb-8">
-            <p className="text-lg md:text-2xl mb-2 font-bold">🎯 Goals</p>
-            <p className="text-lg md:text-2xl">
+          <div className="mb-6">
+            <p className="text-base md:text-xl mb-2 font-bold">🎯 Goals</p>
+            <p className="text-base md:text-xl">
               I’m always looking for opportunities where I can contribute to a dynamic development team, work on real-world projects, and grow under the mentorship of experienced developers.
             </p>
           </div>
@@ -229,7 +227,7 @@ export default function Home() {
       <button
         type="button"
         onClick={() => setShowMore(!showMore)}
-        className="block text-white bg-gradient-to-br font-bold text-xl md:text-2xl h-12 mx-auto w-[40%] md:w-[30%] from-green-400 to-blue-400 hover:bg-gradient-to-bl rounded-full px-5 py-2.5 text-center mb-2 mt-4 "
+        className="block text-white bg-gradient-to-br font-bold text-lg md:text-xl h-12 mx-auto w-[70%] md:w-[40%] from-green-400 to-blue-400 hover:bg-gradient-to-bl rounded-full px-5 py-2.5 text-center mb-2 mt-4 transition-shadow duration-100 hover:shadow-lg glow-hover"
       >
         {showMore ? "Read Less" : "Read More"}
       </button>
@@ -253,7 +251,7 @@ export default function Home() {
         id="portfolio"
         className="flex background-first h-[100vh] md:px-40 py-24 px-5"
       >
-        <div className="flex flex-col mx-auto mt-10 md:mt-15 w-full">
+        <div className="flex flex-col mx-auto  mt-10 md:mt-15 w-full">
           <h1 className="text-6xl text-center font-extrabold mb-15">
             Latest <span className="green">Projects</span>
           </h1>
@@ -343,60 +341,63 @@ export default function Home() {
       </section>
 
       {/* Contact page Design */}
-      <section
-        id="contact"
-        className="flex flex-col md:flex-row background-second h-[100vh] md:px-40 py-24 px-5"
-      >
-        <div className="flex flex-col mt-5 md:mt-60 md:pr-10 p-10 w-full md:w-1/2">
-          <h1 className="text-6xl font-extrabold mb-4">
-            Get in <span className="green">Touch</span>
-          </h1>
-          <h4 className="text-4xl font-bold mb-4">Let&apos;s Connect!</h4>
-          <p className="text-2xl mb-8">
-            I would love to hear from you! Whether you have a question, want to
-            collaborate, or just want to say hi, feel free to reach out.
-          </p>
-          <p className="text-2xl mb-2">
-            You can contact me via email or connect with me on social media.
-          </p>
-        </div>
-<form
-  onSubmit={handleSubmit}
-  className="flex flex-col items-center justify-center p-6 md:p-10 md:pt-30 md:mt-5 w-full md:w-1/2 rounded-lg "
+     <section
+  id="contact"
+  className="flex flex-col md:flex-row items-center min-h-screen w-full py-12 md:py-24 px-4 md:px-40 background-second"
 >
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mb-6">
-    <input
-      type="text"
-      placeholder="Name"
-      className="background-first w-full h-20 px-5 text-lg border-2 border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-      value={Name}
-      onChange={(e) => setName(e.target.value)}
-      required
-    />
-    <input
-      type="email"
-      placeholder="Email"
-      className="background-first w-full h-20 px-5 text-lg border-2 border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-      value={Email}
-      onChange={(e) => setEmail(e.target.value)}
-      required
-    />
-    <textarea
-      placeholder="Enter Message"
-      className="background-first col-span-1 md:col-span-2 w-full h-90 px-5 py-3 text-lg border-2 border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
-      value={Msg}
-      onChange={(e) => setMsg(e.target.value)}
-      required
-    ></textarea>
+  {/* Left side */}
+  <div className="flex flex-col justify-center w-full md:w-1/2 mb-10 md:mb-0 md:pr-10">
+    <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
+      Get in <span className="green">Touch</span>
+    </h1>
+    <h4 className="text-2xl md:text-4xl font-bold mb-4">Let&apos;s Connect!</h4>
+    <p className="text-lg md:text-2xl mb-8">
+      I would love to hear from you! Whether you have a question, want to
+      collaborate, or just want to say hi, feel free to reach out.
+    </p>
+    <p className="text-lg md:text-2xl mb-2">
+      You can contact me via email or connect with me on social media.
+    </p>
   </div>
-  <button
-    type="submit"
-    className="w-full md:w-1/2 text-white bg-gradient-to-br from-green-400 to-blue-400 hover:bg-gradient-to-bl font-bold text-xl h-14 rounded-full px-5 py-3 transition-shadow duration-100 hover:shadow-lg glow-hover"
+
+  {/* Right side (Form) */}
+  <form
+    onSubmit={handleSubmit}
+    className="flex flex-col items-center justify-center w-full md:w-1/2 md:mt-30  p-6 md:p-10"
   >
-    Send Message
-  </button>
-</form>
-      </section>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mb-6">
+      <input
+        type="text"
+        placeholder="Name"
+        className="background-first w-full h-18 px-5 text-lg border-2 border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+        value={Name}
+        onChange={(e) => setName(e.target.value)}
+        required
+      />
+      <input
+        type="email"
+        placeholder="Email"
+        className="background-first w-full h-18 px-5 text-lg border-2 border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+        value={Email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+      />
+      <textarea
+        placeholder="Enter Message"
+        className="background-first col-span-1 md:col-span-2 w-full h-62 px-5 py-3 text-lg border-2 border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
+        value={Msg}
+        onChange={(e) => setMsg(e.target.value)}
+        required
+      ></textarea>
+    </div>
+    <button
+      type="submit"
+      className="w-full md:w-1/2 text-white bg-gradient-to-br from-green-400 to-blue-400 hover:bg-gradient-to-bl font-bold text-xl h-14 rounded-full px-5 py-3 transition-shadow duration-100 hover:shadow-lg glow-hover"
+    >
+      Send Message
+    </button>
+  </form>
+</section>
 
       <Script
         src="https://cdn.lordicon.com/lordicon.js"
