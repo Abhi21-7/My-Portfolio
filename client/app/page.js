@@ -54,7 +54,7 @@ export default function Home() {
       {/* Home page design */}
 <section
   id="home"
-  className="flex flex-col md:flex-row items-center h-auto min-h-screen w-full background-first py-16 md:py-24 px-4 md:px-40"
+  className="flex flex-col md:flex-row items-center h-auto min-h-screen w-full background-first py-29 md:py-24 px-4 md:px-40"
 >
   {/* Left side */}
   <div className="flex flex-col justify-center w-full md:w-[65%] px-2 md:px-8 mb-10 md:mb-0">
@@ -343,7 +343,7 @@ export default function Home() {
       {/* Contact page Design */}
      <section
   id="contact"
-  className="flex flex-col md:flex-row items-center min-h-screen w-full py-12 md:py-24 px-4 md:px-40 background-second"
+  className="flex flex-col md:flex-row items-center min-h-screen w-full py-30 md:py-24 px-4 md:px-40 background-second"
 >
   {/* Left side */}
   <div className="flex flex-col justify-center w-full md:w-1/2 mb-10 md:mb-0 md:pr-10">
