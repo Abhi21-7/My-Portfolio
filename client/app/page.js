@@ -283,6 +283,34 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Project 4 */}
+            <div className="group relative rounded-xl p-8 shadow-lg flex flex-col items-center justify-center transition-all duration-300 bg-gradient-to-br md:hover:bg-gradient-to-br from-green-400 to-blue-400 md:hover:from-green-400 hover:to-blue-400 cursor-pointer h-80 w-full overflow-hidden">
+              <Image
+                src="/Gradai.jpg"
+                alt="GradAI - AI Carrier Coach"
+                width={370}
+                height={200}
+                className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-50 transition-opacity duration-300 z-0"
+              />
+              <div className="absolute inset-0 opacity-50 group-hover:opacity-20 transition-opacity duration-300 z-10"></div>
+              <div className="relative z-20 flex flex-col items-center">
+                <h2 className="text-3xl font-bold mb-4 opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 group-hover:text-white">
+                  GradAI
+                </h2>
+                <p className="text-lg text-center mb-2 md:opacity-0 translate-y-8 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-300 group-hover:text-white">
+                  GradAI is an AI-powered career coach that helps users build 
+                  professional resumes, write personalized cover letters, and 
+                  prepare for interviews. It features AI integration using the 
+                  Gemini API, career insights, and a clean, user-friendly interface.
+                </p>
+                <a href="https://grad-ai-seven.vercel.app">
+                  <button className="mt-6 md:opacity-0 translate-y-8 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-300 bg-white text-green-600 font-bold px-6 py-2 rounded-full shadow hover:bg-green-500 hover:text-white">
+                    Visit
+                  </button>
+                </a>
+              </div>
+            </div>
+
             {/* Project 2 */}
             <div className="group relative rounded-xl p-8 shadow-lg flex flex-col items-center justify-center transition-all duration-300 bg-gradient-to-br md:hover:bg-gradient-to-br from-green-400 to-blue-400 md:hover:from-green-400 hover:to-blue-400 cursor-pointer h-80 w-full overflow-hidden">
               <Image
@@ -336,6 +364,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
+            
           </div>
         </div>
       </section>
